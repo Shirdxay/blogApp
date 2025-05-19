@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="blogs content">
+      <h2>All Blogs</h2>
+      <!--dynamic content with EJS-->
+      <%if(blogs.length >0){ blogs.forEach(blog => { %>
+      <p style="font-weight: 600; color: chocolate"><%= blog.title %></p>
+      <p style="font-style: italic"><%= blog.snippet %></p>
+      <%})}else {%>
+      <p>Opps! <%=blogs.length%> blogs found!</p>
+      <%}%>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
